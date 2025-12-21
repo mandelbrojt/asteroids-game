@@ -4,7 +4,9 @@ from logger import log_state
 
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+clock = pygame.time.Clock()
 running = True
+dt = 0
 
 while running:
     log_state()
@@ -19,6 +21,12 @@ while running:
     
     # flip() the display to put your work on screen
     pygame.display.flip()
+
+    # limits FPS to 60
+    # dt = delta time in seconds since last frame
+    # used for framerate independent physics
+    dt = clock.tick(60) / 1000
+
 
 def main():
     print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
