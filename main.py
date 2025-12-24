@@ -1,6 +1,7 @@
 import pygame
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from logger import log_state
+from player import Player
 
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -19,6 +20,9 @@ while running:
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("black")
     
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    player.draw(screen)
+
     # flip() the display to put your work on screen
     pygame.display.flip()
 
@@ -32,7 +36,6 @@ def main():
     print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
-
 
 if __name__ == "__main__":
     main()
