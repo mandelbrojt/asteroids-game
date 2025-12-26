@@ -201,5 +201,6 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
-# Game log states
+# Ignore game states and events
 game_state.jsonl
+game_events.jsonl
